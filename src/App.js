@@ -18,6 +18,9 @@ import DetailsScreen from "./componentes/DetailsScreen"
 import ContadorScreen from "./componentes/ContadorScreen"
 import MenuScreen from "./componentes/MenuScreen"
 import AleatorioScreen from "./componentes/NumeroAleatorioScreen"
+import Familia from "./componentes/relacao/Familia"
+import Membro from "./componentes/relacao/Membro"
+import { SafeAreaView } from "react-native-safe-area-context"
 
 
 
@@ -26,15 +29,35 @@ const Stack = createNativeStackNavigator()
 
     export default () => (
 
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Menu" component={MenuScreen}/>
-                <Stack.Screen name="Contador" component={ContadorScreen}/>
-                <Stack.Screen name="ContadorV2" component={ContadorV2}/>
-                <Stack.Screen name="menuAleatorio" component={AleatorioScreen}/>
-                <Stack.Screen name="Aleatorio" component={Aleatorio}/>
-            </Stack.Navigator>
-        </NavigationContainer>  
+        <SafeAreaView style={styles.TelaIniciante}>
+
+        <Familia>
+            <Membro nome="Jorge" sobrenome="Pereira"/>
+            <Membro nome="Edinaldo" sobrenome="Pereira"/>
+            <Membro nome="Marcinho" sobrenome="Pereira"/>
+            <Membro nome="Roberta" sobrenome="Pereira"/>
+        </Familia>
+
+        <Familia>
+            <Membro nome="Lucas" sobrenome="Da Silva"/>
+            <Membro nome="Fernando" sobrenome="Da Silva"/>
+            <Membro nome="Jorge" sobrenome="Da Silva"/>
+            <Membro nome="Marcia" sobrenome="Da Silva"/>
+        </Familia>
+
+
+        </SafeAreaView>
+
+        
+        // <NavigationContainer>
+        //     <Stack.Navigator>
+        //         <Stack.Screen name="Menu" component={MenuScreen}/>
+        //         <Stack.Screen name="Contador" component={ContadorScreen}/>
+        //         <Stack.Screen name="ContadorV2" component={ContadorV2}/>
+        //         <Stack.Screen name="menuAleatorio" component={AleatorioScreen}/>
+        //         <Stack.Screen name="Aleatorio" component={Aleatorio}/>
+        //     </Stack.Navigator>
+        // </NavigationContainer>  
 
 
         // <View style={styles.TelaIniciante}>
